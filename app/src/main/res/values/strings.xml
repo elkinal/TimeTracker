@@ -26,4 +26,6 @@
     <string name="content_help_default_text">HelpActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="content_settings_default_text">SettingsActivity</string>
+    <string name="title_activity_assess">AssessActivity</string>
+    <string name="content_assess_default_text">AssessActivity</string>
 </resources>
