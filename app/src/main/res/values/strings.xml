@@ -22,4 +22,8 @@
     <string name="content_about_text_3">example@gmail.com</string>
     <string name="content_feed_back_text_2">Send a message to this address:</string>
     <string name="content_feed_back_text_1">To contact the Administrator,</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="content_help_default_text">HelpActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="content_settings_default_text">SettingsActivity</string>
 </resources>

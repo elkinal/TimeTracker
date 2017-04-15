@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.menu_navigation_view_help:
-                        Toast.makeText(MainActivity.this, "Help", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "Help", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(MainActivity.this,HelpActivity.class);
+                        startActivity(intent1);
                         break;
                     case R.id.menu_navigation_view_feedback:
                         //Toast.makeText(MainActivity.this, "Feedback", Toast.LENGTH_SHORT).show();
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case R.id.menu_navigation_view_settings:
-                        Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(MainActivity.this,SettingsActivity.class);
+                        startActivity(intent3);
                         break;
                     case R.id.menu_navigation_view_assess:
                         Toast.makeText(MainActivity.this, "Assess", Toast.LENGTH_SHORT).show();
