@@ -1,10 +1,16 @@
 package com.example.alxye.timetracker;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private void initComponents() {
         initToolbar();
         initNavigationView();
+        initBottomNavigationView();
     }
 
     private void initToolbar() {
@@ -28,11 +35,63 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initNavigationView() {
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.activity_main_drawer_layout);
+        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.activity_main_drawer_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,
                 R.string.activity_main_drawer_layout_open,R.string.activity_main_drawer_layout_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.activity_main_navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                drawerLayout.closeDrawers();
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.menu_navigation_view_help:
+                        Toast.makeText(MainActivity.this, "Help", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_navigation_view_feedback:
+                        //Toast.makeText(MainActivity.this, "Feedback", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(MainActivity.this,FeedBackActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.menu_navigation_view_settings:
+                        Toast.makeText(MainActivity.this, "Settings", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_navigation_view_assess:
+                        Toast.makeText(MainActivity.this, "Assess", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_navigation_view_about:
+                        //Toast.makeText(MainActivity.this, "About", Toast.LENGTH_SHORT).show();
+                        Intent intent5 = new Intent(MainActivity.this,AboutActivity.class);
+                        startActivity(intent5);
+                }
+                return true;
+            }
+        });
+    }
+
+    private void initBottomNavigationView() {
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.activity_main_bottom_navigation_view);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.navigation_home:
+                        Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navigation_dashboard:
+                        Toast.makeText(MainActivity.this, "Dashboard", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navigation_notifications:
+                        Toast.makeText(MainActivity.this, "Notifications", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
 }

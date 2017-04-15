@@ -14,4 +14,12 @@
     <string name="activity_main_drawer_layout_close">Close</string>
     <string name="navigation_view_header_layout_text_view_morda">Morda Mordova</string>
     <string name="navigation_view_header_layout_text_view_email">mordovich@android.com</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_feed_back">FeedBackActivity</string>
+    <string name="content_about_version">Version: 1.0.0.1</string>
+    <string name="content_about_copyright_info">ⓒ Copyright Alexey Elkin and Kiril Kotov</string>
+    <string name="content_about_extra_info">All rights Reserved</string>
+    <string name="content_about_text_3">example@gmail.com</string>
+    <string name="content_feed_back_text_2">Send a message to this address:</string>
+    <string name="content_feed_back_text_1">To contact the Administrator,</string>
 </resources>

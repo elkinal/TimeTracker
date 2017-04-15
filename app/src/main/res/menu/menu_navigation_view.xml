@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<group android:checkableBehavior="single">
+<group android:checkableBehavior="all">
     <item
         android:title="@string/menu_navigation_view_help"
         android:icon="@drawable/ic_help_circle"
-        android:id="@+id/menu_navigation_view_help"/>
+        android:id="@+id/menu_navigation_view_help"
+        android:checked="true"/>
     <item
         android:title="@string/menu_navigation_view_feedback"
         android:icon="@drawable/ic_email_open"
@@ -19,10 +20,12 @@
     <menu>
         <item
             android:title="@string/menu_navigation_view_assess"
-            android:icon="@drawable/ic_checkbox_multiple_marked"/>
+            android:icon="@drawable/ic_checkbox_multiple_marked"
+            android:id="@+id/menu_navigation_view_assess"/>
         <item
             android:title="@string/menu_navigation_view_about"
-            android:icon="@drawable/ic_account_box"/>
+            android:icon="@drawable/ic_account_box"
+            android:id="@+id/menu_navigation_view_about"/>
 
     </menu>
 </item>
